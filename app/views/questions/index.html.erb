@@ -7,7 +7,7 @@
     <%= link_to question.title, question_path(question) %>
   </h2>
   <div class="info">
-    by <%= question.title %>
+    by <%= question.user_id %>
     on <%= question.created_at.strftime('%b %d, %Y') %>
   </div>
   <div class="content"><%= question.content %></div>
