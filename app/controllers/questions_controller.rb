@@ -19,6 +19,7 @@ before_filter :authorize, only: [:create, :edit, :update]
 
   def create
     @question = Question.new(question_params)
+    @question.user_id = current_user.id
     if @question.save
       flash[:notice] = "Question saved"
       redirect_to questions_path
