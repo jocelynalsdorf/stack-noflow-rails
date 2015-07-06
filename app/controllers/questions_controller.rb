@@ -13,6 +13,21 @@ before_filter :authorize, only: [:create, :edit, :update]
     @question = Question.find(params[:id])
   end
 
+  def new
+    @question = Question.new
+  end
+
+  def create
+    @question = Question.new(question_params)
+    if @question.save
+      flash[:notice] = "Question saved"
+      redirect_to questions_path
+    else
+      render :new
+  end
+end
+
+
   def update
     @question = Question.find(params[:id])
     if @question.update_attributes(params[:question])
@@ -22,4 +37,8 @@ before_filter :authorize, only: [:create, :edit, :update]
    end
   end
 
+private
+def question_params
+  params.require(:question).permit(:title, :content)
+end
 end

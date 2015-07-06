@@ -13,3 +13,10 @@
   <div class="content"><%= question.content %></div>
 <% end %>
 </div>
+
+<% if current_user %>
+
+  <%= link_to "Ask a Question", new_question_path %>
+<% else %>
+  <p>You must be signed in to ask a question</p>
+<% end %>
