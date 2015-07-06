@@ -1,1 +1,15 @@
-Index 
+<h1>Stack No-flow</h1>
+<h3>Questions</h3>
+
+<div id="questions-all">
+<% @questions.each do |question| %>
+  <h2>
+    <%= link_to question.title, question_path(question) %>
+  </h2>
+  <div class="info">
+    by <%= question.title %>
+    on <%= question.created_at.strftime('%b %d, %Y') %>
+  </div>
+  <div class="content"><%= question.content %></div>
+<% end %>
+</div>
