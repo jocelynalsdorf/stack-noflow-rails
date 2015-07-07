@@ -9,8 +9,17 @@
         <%= link_to user.name, user_path(user) %>
       </h2>
       <div class="info">
-        is admin? <%= user.admin %>
-        joined on <%= user.created_at.strftime('%b %d, %Y') %>
+        <p><strong>is admin?</strong> <%= user.admin %></p>
+        <p><strong>joined on </strong> <%= user.created_at.strftime('%b %d, %Y') %></p>
+
+        <p><strong>ALL Questions this User Asked:</strong></p>
+        <% user.questions.each do |question| %>
+        <p><%= question.title %></p>
+        <% end %>
+        <p><strong>All Answers from this User:</strong></p>
+        <% user.answers.each do |answer| %>
+        <p><%= answer.text %></p>
+        <% end %>
       </div>
 
     <% end %>
