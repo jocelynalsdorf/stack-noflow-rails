@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-3"></div>
+    <div class="col-md-6 center-all-quests">
+    <h3>All Users</h3>
+
+    <div id="questions-all">
+    <% @users.each do |user| %>
+      <h2>
+        <%= link_to user.name, user_path(user) %>
+      </h2>
+      <div class="info">
+        is admin? <%= user.admin %>
+        joined on <%= user.created_at.strftime('%b %d, %Y') %>
+      </div>
+
+    <% end %>
+    </div>
+
+    <% if current_user %>
+
+      <button class="ask-btn"><%= link_to "Edit User", new_question_path %></button>
+    <% else %>
+      <p>You must be signed in to ask a question</p>
+    <% end %>
+  </div>
+  <div class="col-md-3"></div>
+</div>

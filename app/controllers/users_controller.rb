@@ -14,7 +14,8 @@ class UsersController <  ApplicationController
   end
 
   def index
-
+    @users = User.all
+    render:show
   end
 
   def show
