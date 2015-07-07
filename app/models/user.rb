@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :answers
   validates :name, :presence => true
   validates :email, :presence => true
-  validates_uniqueness_of :email
+
 
 
 end
