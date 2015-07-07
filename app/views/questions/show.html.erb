@@ -18,6 +18,7 @@
         <div class="project-list">
           <% @question.answers.each do |answer| %>
             <div class="answer-items content">
+              <span>Answered by: <%= answer.user.name %></span>
               <%= link_to answer.text, question_answer_path(@question, answer)%>
 
             </div>
