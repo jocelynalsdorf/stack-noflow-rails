@@ -31,7 +31,7 @@ end
 
   def update
     @question = Question.find(params[:id])
-    if @question.update_attributes(params[:question])
+    if @question.update_attributes(question_params)
      redirect_to @question, notice: "Question has been updated"
    else
      render :edit

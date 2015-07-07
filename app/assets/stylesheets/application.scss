@@ -1,2 +1,64 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,400,300,100);
+
+body, html {
+	height:100%;
+	background-color: #EFEFEF;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+.container {
+	min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
+.navbar-default {
+	background-color: rgb(96,125,139);
+}
+.navbar-fixed-bottom {
+	background-color: rgb(96,125,139);
+	color: #fff;
+	font-size: 16px;
+	font-weight: 300px;
+	height:60px;
+	padding-top: 10px;
+	text-align: center;
+
+}
+
+.navbar-right {
+	padding-top: 10px;
+	font-size: 17px;
+}
+
+.field, .actions {
+  padding-bottom: 10px;
+  padding-top:10px;
+}
+
+
+.navbar-default .navbar-brand {
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	font-size: 30px;
+}
+
+div.navbar-header a {
+	color:white;
+}
+
+
+.col-md-6.center-form {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 35px;
+  background-color: #f3f3f3;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

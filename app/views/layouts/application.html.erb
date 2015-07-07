@@ -7,15 +7,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if current_user %>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header pull-left">
+      <a class="navbar-brand" href="/">
+      STACK NO-FLOW
+      </a>
+      </div>
+      <div class="navbar-header navbar-right">
+      <% if current_user %>
   Logged in as <%= current_user.email %>.
   <%= link_to "Log Out", logout_path %>
 <% else %>
   <%= link_to "Sign Up", signup_path %> or
   <%= link_to "Log In", login_path %>
 <% end %>
+		</div>
 
-<%= yield %>
+  </div>
+</nav>
+<div class="container">
+  <%= yield %>
 
+  <div class="footer navbar-fixed-bottom">
+  	<p>STACK NO-FLOW copyright © 2015</p>
+  </div>
+</div>
 </body>
 </html>

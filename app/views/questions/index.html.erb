@@ -1,5 +1,4 @@
-<h1>Stack No-flow</h1>
-<h3>Questions</h3>
+<h3>All Questions</h3>
 
 <div id="questions-all">
 <% @questions.each do |question| %>
@@ -16,7 +15,7 @@
 
 <% if current_user %>
 
-  <%= link_to "Ask a Question", new_question_path %>
+  <button><%= link_to "Ask a Question", new_question_path %></button>
 <% else %>
   <p>You must be signed in to ask a question</p>
 <% end %>
