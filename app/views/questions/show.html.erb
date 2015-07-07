@@ -1,5 +1,9 @@
-<h1><%= @question.title %></h1>
-<%= @question.content %>
+<div class="row">
+  <div class="col-md-3"></div>
+    <div class="col-md-6 center-quest">
+
+<h1 class="single-question-header"><%= @question.title %></h1>
+<h3><%= @question.content %></h3>
 <p>
   <%= link_to "Edit", edit_question_path(@question) %> |
   <%= link_to "Delete Question", question_path(@question),
@@ -11,17 +15,21 @@
  <% if @question.answers.any? %>
         <h4 class="sub-title">Answers:</h4>
 
-        <ul class="project-list">
+        <div class="project-list">
           <% @question.answers.each do |answer| %>
-            <li class="answer-items">
+            <div class="answer-items content">
               <%= link_to answer.text, question_answer_path(@question, answer)%>
 
-            </li>
+            </div>
           <% end %>
         </ul>
       <% else %>
         <p>There are no answers yet!</p>
       <% end %>
-
-      <p><%= link_to "Add an Answer", new_question_answer_path(@question) %></p>
-      <p><%= link_to "Return to Questions", questions_path %></p>
+      <div class="b-group">
+        <p><%= link_to "Add an Answer", new_question_answer_path(@question) %></p>
+        <p><%= link_to "Return to Questions", questions_path %></p>
+      </div>
+      <div class="col-md-3"></div>
+    </div><!-- end col-6 -->
+</div><!-- end row -->

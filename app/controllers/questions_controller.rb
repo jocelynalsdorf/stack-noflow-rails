@@ -7,6 +7,7 @@ before_filter :authorize, only: [:create, :edit, :update, :delete]
 
   def show
     @question = Question.find(params[:id])
+    @user = User.find(question_id)
 
   end
 
