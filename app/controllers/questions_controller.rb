@@ -1,5 +1,5 @@
 class QuestionsController <  ApplicationController
-before_filter :authorize, only: [:create, :edit, :update]
+before_filter :authorize, only: [:create, :edit, :update, :delete]
 
   def index
     @questions = Question.all
@@ -7,6 +7,7 @@ before_filter :authorize, only: [:create, :edit, :update]
 
   def show
     @question = Question.find(params[:id])
+
   end
 
   def edit

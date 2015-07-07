@@ -6,3 +6,22 @@
             :data => {:confirm => "Are you sure?", :method => "delete"} %> |
   <%= link_to "Browse Questions", questions_path %>
 </p>
+
+
+ <% if @question.answers.any? %>
+        <h4 class="sub-title">Answers:</h4>
+
+        <ul class="project-list">
+          <% @question.answers.each do |answer| %>
+            <li class="answer-items">
+              <%= link_to answer.text, question_answer_path(@question, answer)%>
+
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>There are no answers yet!</p>
+      <% end %>
+
+      <p><%= link_to "Add an Answer", new_question_answer_path(@question) %></p>
+      <p><%= link_to "Return to Questions", questions_path %></p>

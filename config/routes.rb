@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root :to => 'questions#index'
 
-  resources :questions
+
   resources :users
   resources :sessions
+  resources :questions do
+    resources :answers
+  end
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'

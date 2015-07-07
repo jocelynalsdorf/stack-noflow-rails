@@ -1,0 +1,21 @@
+<h1>Edit Answer</h1>
+
+<%= form_for [@question, @answer] do |f| %>
+  <% if @answer.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this article from being saved:</h2>
+      <ul>
+      <% @answer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :text %><br />
+    <%= f.text_field :text %>
+  </div>
+
+  <div class="actions"><%= f.submit %></div>
+<% end %>
