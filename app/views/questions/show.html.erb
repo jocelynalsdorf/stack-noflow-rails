@@ -2,5 +2,7 @@
 <%= @question.content %>
 <p>
   <%= link_to "Edit", edit_question_path(@question) %> |
+  <%= link_to "Delete Question", question_path(@question),
+            :data => {:confirm => "Are you sure?", :method => "delete"} %> |
   <%= link_to "Browse Questions", questions_path %>
 </p>

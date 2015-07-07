@@ -1,21 +1,27 @@
-<h3>All Questions</h3>
+<div class="row">
+  <div class="col-md-3"></div>
+    <div class="col-md-6 center-all-quests">
+    <h3>All Questions</h3>
 
-<div id="questions-all">
-<% @questions.each do |question| %>
-  <h2>
-    <%= link_to question.title, question_path(question) %>
-  </h2>
-  <div class="info">
-    by <%= question.user_id %>
-    on <%= question.created_at.strftime('%b %d, %Y') %>
+    <div id="questions-all">
+    <% @questions.each do |question| %>
+      <h2>
+        <%= link_to question.title, question_path(question) %>
+      </h2>
+      <div class="info">
+        by <%= question.user_id %>
+        on <%= question.created_at.strftime('%b %d, %Y') %>
+      </div>
+      <div class="content"><%= question.content %></div>
+    <% end %>
+    </div>
+
+    <% if current_user %>
+
+      <button class="ask-btn"><%= link_to "Ask a Question", new_question_path %></button>
+    <% else %>
+      <p>You must be signed in to ask a question</p>
+    <% end %>
   </div>
-  <div class="content"><%= question.content %></div>
-<% end %>
+  <div class="col-md-3"></div>
 </div>
-
-<% if current_user %>
-
-  <button><%= link_to "Ask a Question", new_question_path %></button>
-<% else %>
-  <p>You must be signed in to ask a question</p>
-<% end %>
