@@ -17,6 +17,6 @@ FactoryGirl.define do
 
   factory(:answer) do
     text('my answer')
-    question
+     association :question, factory: :question, strategy: :build
   end
 end
